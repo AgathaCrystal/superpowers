@@ -628,10 +628,6 @@ Deploying untested skills = deploying untested code. It's a violation of quality
 - [ ] No narrative storytelling
 - [ ] Supporting files only for tools or heavy reference
 
-**Deployment:**
-- [ ] Commit skill to git and push to your fork (if configured)
-- [ ] Consider contributing back via PR (if broadly useful)
-
 ## Discovery Workflow
 
 How future Claude finds your skill:
