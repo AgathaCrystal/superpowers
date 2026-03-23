@@ -5,7 +5,7 @@ description: Use when completing tasks, implementing major features, or before m
 
 # Requesting Code Review
 
-Dispatch superpowers:code-reviewer subagent to catch issues before they cascade.
+Dispatch superpowers:code-reviewer subagent to catch issues before they cascade. The reviewer gets precisely crafted context for evaluation — never your session's history. This keeps the reviewer focused on the work product, not your thought process, and preserves your own context for continued work.
 
 **Core principle:** Review early, review often.
 
@@ -14,7 +14,7 @@ Dispatch superpowers:code-reviewer subagent to catch issues before they cascade.
 **Mandatory:**
 - After each task in subagent-driven development
 - After completing major feature
-- Before merge to main
+- Before integration or merge to main
 
 **Optional but valuable:**
 - When stuck (fresh perspective)
@@ -72,11 +72,12 @@ You: [Fix progress indicators]
 - Fix before moving to next task
 
 **Executing Plans:**
-- Review after each batch (3 tasks)
-- Get feedback, apply, continue
+- Review when the workflow reaches an intentional reporting checkpoint
+- Checkpoints are defined by the user or plan, not automatically after every task
+- Apply feedback before continuing
 
 **Ad-Hoc Development:**
-- Review before merge
+- Review before integration
 - Review when stuck
 
 ## Red Flags

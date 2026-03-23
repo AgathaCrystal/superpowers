@@ -1,17 +1,19 @@
 ---
 name: executing-plans
-description: Use when you have a written implementation plan to execute in a separate session with review checkpoints
+description: Use when you have a written implementation plan to execute in order with clear reporting checkpoints
 ---
 
 # Executing Plans
 
 ## Overview
 
-Load plan, review critically, execute tasks in batches, report for review between batches.
+Load plan, review critically, execute all tasks continuously.
 
-**Core principle:** Batch execution with checkpoints for architect review.
+**Core principle:** Continuous execution — only pause for user review if the user explicitly asks for review rounds.
 
 **Announce at start:** "I'm using the executing-plans skill to implement this plan."
+
+**Note:** Superpowers works much better with access to subagents. If subagents are available, use superpowers:subagent-driven-development instead of this skill for higher quality results.
 
 ## The Process
 
@@ -21,8 +23,7 @@ Load plan, review critically, execute tasks in batches, report for review betwee
 3. If concerns: Raise them with your human partner before starting
 4. If no concerns: Create TodoWrite and proceed
 
-### Step 2: Execute Batch
-**Default: First 3 tasks**
+### Step 2: Execute Tasks
 
 For each task:
 1. Mark as in_progress
@@ -30,22 +31,19 @@ For each task:
 3. Run verifications as specified
 4. Mark as completed
 
-### Step 3: Report
-When batch complete:
+Execute all tasks continuously unless the user has requested review rounds between batches.
+
+### Step 3: Report Completion
+
+After all tasks complete and verified:
 - Show what was implemented
 - Show verification output
-- Say: "Ready for feedback."
-
-### Step 4: Continue
-Based on feedback:
-- Apply changes if needed
-- Execute next batch
-- Repeat until complete
+- Report any issues encountered
 
 ## When to Stop and Ask for Help
 
 **STOP executing immediately when:**
-- Hit a blocker mid-batch (missing dependency, test fails, instruction unclear)
+- Hit a blocker (missing dependency, test fails, instruction unclear)
 - Plan has critical gaps preventing starting
 - You don't understand an instruction
 - Verification fails repeatedly
@@ -65,10 +63,12 @@ Based on feedback:
 - Follow plan steps exactly
 - Don't skip verifications
 - Reference skills when plan says to
-- Between batches: just report and wait
 - Stop when blocked, don't guess
 
 ## Integration
 
 **Required workflow skills:**
 - **superpowers:writing-plans** - Creates the plan this skill executes
+
+**Alternative workflow:**
+- **superpowers:subagent-driven-development** - Use for same-session execution with fresh subagent per task (recommended)

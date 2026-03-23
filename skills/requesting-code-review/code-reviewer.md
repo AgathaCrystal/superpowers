@@ -9,23 +9,17 @@ You are reviewing code changes for production readiness.
 4. Categorize issues by severity
 5. Assess production readiness
 
+## Review Scope
+
+{WHAT_WAS_IMPLEMENTED}
+
 ## What Was Implemented
 
 {DESCRIPTION}
 
 ## Requirements/Plan
 
-{PLAN_REFERENCE}
-
-## Git Range to Review
-
-**Base:** {BASE_SHA}
-**Head:** {HEAD_SHA}
-
-```bash
-git diff --stat {BASE_SHA}..{HEAD_SHA}
-git diff {BASE_SHA}..{HEAD_SHA}
-```
+{PLAN_OR_REQUIREMENTS}
 
 ## Review Checklist
 
@@ -87,7 +81,7 @@ git diff {BASE_SHA}..{HEAD_SHA}
 
 ### Assessment
 
-**Ready to merge?** [Yes/No/With fixes]
+**Ready to proceed?** [Yes/No/With fixes]
 
 **Reasoning:** [Technical assessment in 1-2 sentences]
 
@@ -140,7 +134,7 @@ git diff {BASE_SHA}..{HEAD_SHA}
 
 ### Assessment
 
-**Ready to merge: With fixes**
+**Ready to proceed: With fixes**
 
 **Reasoning:** Core implementation is solid with good architecture and tests. Important issues (help text, date validation) are easily fixed and don't affect core functionality.
 ```
